@@ -23,6 +23,32 @@ class MyLayout(Widget):
         else:
             self.ids.calc_input.text = f"{prior}{button}"
 
+    def math_sign(self, sign):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f"{prior}{sign}"
+
+    def equal(self):
+        prior = self.ids.calc_input.text
+        ans = 0
+        if "+" in prior:
+            num_list = prior.split("+")
+            for _ in num_list:
+                ans += int(_)
+        elif "-" in prior:
+            num_list = prior.split("-")
+            for _ in num_list:
+                ans -= int(_)
+        elif "*" in prior:
+            num_list = prior.split("*")
+            for _ in num_list:
+                ans *= int(_)
+        elif "/" in prior:
+            num_list = prior.split("/")
+            for _ in num_list:
+                ans /= int(_)
+
+        self.ids.calc_input.text = str(ans)
+
 
 class CalcApp(App):
     def build(self):
