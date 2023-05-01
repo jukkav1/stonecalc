@@ -23,6 +23,14 @@ class MyLayout(Widget):
         else:
             self.ids.calc_input.text = f"{prior}{button}"
 
+    def dot(self):
+        prior = self.ids.calc_input.text
+        if "." in prior:
+            pass
+        else:
+            prior = f"{prior}."
+            self.ids.calc_input.text = prior
+
     def math_sign(self, sign):
         prior = self.ids.calc_input.text
         self.ids.calc_input.text = f"{prior}{sign}"
