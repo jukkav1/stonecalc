@@ -38,7 +38,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "/"
-                on_press: root.div()
+                on_press: root.math_sign('/')
 
             Button:
                 size_hint: (.2, .2)
@@ -65,7 +65,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "*"
-                on_press: root.mul()
+                on_press: root.math_sign('*')
 
             Button:
                 size_hint: (.2, .2)
@@ -92,7 +92,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "-"
-                on_press: root.sub()
+                on_press: root.math_sign('-')
 
             Button:
                 size_hint: (.2, .2)
@@ -119,7 +119,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "+"
-                on_press: root.add()
+                on_press: root.math_sign('+')
 
             Button:
                 size_hint: (.2, .2)
