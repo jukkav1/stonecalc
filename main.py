@@ -15,6 +15,8 @@ class MyLayout(Widget):
 
     def button_press(self, button):
         prior = self.ids.calc_input.text
+        if "-E-" in prior:
+            prior = ""
 
         if prior == "0":
             self.ids.calc_input.text = ""
@@ -37,13 +39,13 @@ class MyLayout(Widget):
 
     def dot(self):
         prior = self.ids.calc_input.text
-        num_list = prior.split('+')
+        num_list = prior.split("+")
 
-        if "+" in prior and '.' not in num_list[-1]:
+        if "+" in prior and "." not in num_list[-1]:
             prior = f"{prior}."
             self.ids.calc_input.text = prior
 
-        elif "." in prior :
+        elif "." in prior:
             pass
         else:
             prior = f"{prior}."
@@ -55,12 +57,11 @@ class MyLayout(Widget):
 
     def equal(self):
         prior = self.ids.calc_input.text
-        ans = 0.0
-        if "+" in prior:
-            num_list = prior.split("+")
-            for _ in num_list:
-                ans += float(_)
-        self.ids.calc_input.text = str(ans)
+        try:
+            ans = eval(prior)
+            self.ids.calc_input.text = str(ans)
+        except:
+            self.ids.calc_input.text = "-E-"
 
 
 class CalcApp(App):
