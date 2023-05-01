@@ -19,11 +19,13 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "%"
+                on_press: root.percent()
 
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "CE"
+                on_press: root.ce()
 
             Button:
                 id: clear
@@ -36,6 +38,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "/"
+                on_press: root.div()
 
             Button:
                 size_hint: (.2, .2)
@@ -62,6 +65,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "*"
+                on_press: root.mul()
 
             Button:
                 size_hint: (.2, .2)
@@ -88,6 +92,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "-"
+                on_press: root.sub()
 
             Button:
                 size_hint: (.2, .2)
@@ -114,6 +119,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "+"
+                on_press: root.add()
 
             Button:
                 size_hint: (.2, .2)
@@ -131,9 +137,11 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "."
+                on_press: root.button_press('.')
 
             Button:
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "="
+                on_press: root.equal()
 
