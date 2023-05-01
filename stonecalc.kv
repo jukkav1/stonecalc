@@ -22,17 +22,17 @@
                 on_press: root.percent()
 
             Button:
-                size_hint: (.2, .2)
-                font_size: 32
-                text: "CE"
-                on_press: root.ce()
-
-            Button:
                 id: clear
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "C"
                 on_press: root.clear()
+
+            Button:
+                size_hint: (.2, .2)
+                font_size: 32
+                text: u"\u00AB"
+                on_press: root.remove()
 
             Button:
                 size_hint: (.2, .2)
@@ -125,6 +125,7 @@
                 size_hint: (.2, .2)
                 font_size: 32
                 text: "+/-"
+                on_press: root.toggle_dash()
 
             Button:
                 size_hint: (.2, .2)
