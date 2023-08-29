@@ -1,12 +1,12 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-
-# from kivy.properties import ObjectProperty
+from kivy import require as kivyreq
 from kivy.lang import Builder
 from kivy.core.window import Window
 
 Window.size = (400, 600)
 Builder.load_file("stonecalc.kv")
+kivyreq("2.2.0")
 
 
 class MyLayout(Widget):
